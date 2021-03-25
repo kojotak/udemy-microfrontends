@@ -8,9 +8,9 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'container',
-      remotes: {
-        products: 'products@http://localhost:8081/remoteEntry.js',
+      name: 'container', //nikde se ve skutecnosti nepouziva
+      remotes: { //klic v remotes se mapuje na: import 'products/ProductsIndex' v bootstrap.js
+        products: 'products@http://localhost:8081/remoteEntry.js', //products pred zavinacem je nazev v webpack configu produktu
       },
     }),
     new HtmlWebpackPlugin({
