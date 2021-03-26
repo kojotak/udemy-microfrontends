@@ -1,9 +1,13 @@
-import { mount } from 'products/ProductsIndex'
-import 'cart/CartShow'
+import { mount as mountProducts } from 'products/ProductsIndex'
+import { mount as mountCart } from 'cart/CartShow'
 
 console.log('container...');
 
 //propojime
-mount( //najdeme v index.html v containeru, kam se maji produkty napojit
-    document.querySelector('#dev-products')
+mountProducts( //najdeme v index.html v containeru, kam se maji produkty napojit
+    document.querySelector('#my-products')
+);
+
+mountCart( //najdeme v index.html v containeru, kam se maji produkty napojit
+    document.querySelector('#my-cart')
 );
