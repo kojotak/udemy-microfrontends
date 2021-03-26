@@ -12,7 +12,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       exposes: {
           //premapovani kvuli moznym kolizim nazvu typu index.js, umoznuje delat aliasy
-        './ProductsIndex': './src/index',
+        './ProductsIndex': './src/bootstrap', 
       },
       shared: {
           faker: {
