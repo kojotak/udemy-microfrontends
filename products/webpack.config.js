@@ -14,7 +14,12 @@ module.exports = {
           //premapovani kvuli moznym kolizim nazvu typu index.js, umoznuje delat aliasy
         './ProductsIndex': './src/index',
       },
-      shared: ['faker']
+      shared: {
+          faker: {
+              //rikame, ze chceme pouze jednu verzi
+              singleton: true,
+          }
+      }
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
