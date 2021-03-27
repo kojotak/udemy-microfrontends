@@ -2,7 +2,7 @@ const { merge } = require ('webpack-merge'); //umi mergovat webpack configurace
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const commonConfig = require('./webpack.common');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-
+const packageJson = require('../package.json');//object se zavislostma, ktere strcime do shared v ModuleFederationPluginu
 const devConfig ={
     mode: 'development',
     devServer:{
@@ -17,7 +17,7 @@ const devConfig ={
             remotes:{
                 marketing:'marketing@http://localhost:8081/remoteEntry.js',
             },
-            shared:['react','react-dom'],          
+            shared:packageJson.dependencies,          
         }),
         new HtmlWebpackPlugin({
             template:'./public/index.html'
