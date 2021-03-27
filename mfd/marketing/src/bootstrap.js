@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import App from './App'
 // mount function + 2 scenarios: standalone and hosted in container
 
 const mount = (el) =>{
     ReactDOM.render(
-      <h1>hi there from marketing</h1>,
+      <App />,
       el  
     );
 };
