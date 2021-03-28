@@ -11,4 +11,5 @@ https://www.udemy.com/course/microfrontend-course/
 ## mfp - micro frontend p?
 
 * https://github.com/kojotak/udemy-microfrontends/actions/workflows/container.yml github actions
+* https://df4u771blzmw.cloudfront.net/ AWS
 
