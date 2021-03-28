@@ -8,3 +8,7 @@ https://www.udemy.com/course/microfrontend-course/
 * http://localhost:8081/ - standalone products application
 * http://localhost:8082/ - standalone cart application
 
+## mfp - micro frontend p?
+
+* https://github.com/kojotak/udemy-microfrontends/actions/workflows/container.yml github actions
+
