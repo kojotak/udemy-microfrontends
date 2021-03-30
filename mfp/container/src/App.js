@@ -9,7 +9,7 @@ const generateClassName = createGenerateClassName({
 });
 
 export default () => {
-    return(
+    return( //BrowserRouter resi i historii v browseru
     <BrowserRouter generateClassName={generateClassName}>
         <div>
             <Header />
