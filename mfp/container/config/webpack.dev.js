@@ -4,6 +4,10 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const packageJson = require('../package.json');//object se zavislostma, ktere strcime do shared v ModuleFederationPluginu
 const devConfig ={
     mode: 'development',
+    output: {
+        //fixes publicPath issue, see chapter 95+96
+        publicPath: 'http://localhost:8080/'
+      },
     devServer:{
         port: 8080,
         historyApiFallback:{
