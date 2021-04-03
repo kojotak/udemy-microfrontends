@@ -3,31 +3,32 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const commonConfig = require('./webpack.common');
 const packageJson = require('../package.json');
-const devConfig ={
+
+const devConfig = {
     mode: 'development',
     output: {
         //fixes publicPath issue, see chapter 95+96
         publicPath: 'http://localhost:8081/'
     },
-    devServer:{
+  devServer: {
         port: 8081,
-        historyApiFallback:{
+    historyApiFallback: {
             index: 'index.html',
-        }
     },
-    plugins:[
+  },
+  plugins: [
         new ModuleFederationPlugin({
-            name:'marketing',
+      name: 'marketing',
             filename: 'remoteEntry.js',
             exposes: {
-                './MarketingApp':'./src/bootstrap'
+        './MarketingApp': './src/bootstrap',
             },
-            shared:packageJson.dependencies,      
+      shared: packageJson.dependencies,
         }),
         new HtmlWebpackPlugin({
-            template:'./public/index.html'
-        })
-    ]
+      template: './public/index.html',
+    }),
+  ],
 };
 
 module.exports = merge(commonConfig, devConfig);
